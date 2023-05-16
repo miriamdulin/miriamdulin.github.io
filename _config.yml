@@ -30,7 +30,7 @@ unpublished         : false
 whitelist           : []
 plugins             : [jekyll-remote-theme]
 remote_theme: pages-themes/cayman@v0.2.0
-title: please work
+title: Miriam Dulin
 
 # Conversion
 markdown            : kramdown
