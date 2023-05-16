@@ -11,8 +11,6 @@ sass:
 collections:
   posts:
     output          : true
-    theme: cayman
-
 # Handling Reading
 safe                : false
 include             : [".htaccess"]
@@ -21,6 +19,7 @@ keep_files          : [".git", ".svn"]
 encoding            : "utf-8"
 markdown_ext        : "markdown,mkdown,mkdn,mkd,md"
 strict_front_matter : false
+theme: cayman
 
 # Filtering Content
 show_drafts         : null
