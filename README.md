@@ -2,4 +2,4 @@
 ## My Highschool Career
 ### ????
 ## Contact me
-**Email:** <mdulin@ebnet.org>
+**Email:** <mdulin@ebnet.org> | <dulinmiriam@gmail.com>
