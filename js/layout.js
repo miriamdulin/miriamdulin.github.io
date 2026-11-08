@@ -12,7 +12,6 @@ document.addEventListener("DOMContentLoaded", function () {
     const wrapperElement = document.querySelector(".container"); // you might have to change this selector to something like .my-wrapper
     if (wrapperElement) {
       wrapperElement.insertAdjacentHTML("afterbegin", sidebarEl1);
-      wrapperElement.insertAdjacentHTML("beforeend", sidebarEl2)
     }
 
     //initActiveLinks();
@@ -81,7 +80,13 @@ function getNestingString() {
 // Insert your header HTML inside these ``. You can use HTML as usual.
 const headerEl =`
 	<header>
+    <img src="images/angel.png" class="angel">
+    <img src="images/rose_quartz.png" class="quartz">
+    <img src="images/rose.png" class="rose">
 		<h1>< miriam dulin ></h1>
+    <img src="images/black_rose.png" class="black_rose">
+    <img src="images/matryoshka.png" class="matryoshka">
+    <img src="images/golem.png" class="golem">
 	</header>
 `
 ;
@@ -106,8 +111,3 @@ const sidebarEl1 = `
     </nav>
 	</aside>
   `;
-
-const sidebarEl2 = `
-	<div class="decor" >
-	</div>
-`;

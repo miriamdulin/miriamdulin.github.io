@@ -12,13 +12,15 @@
   display: grid;
   gap: 0px;
   grid-template:
-    "header header header"
-    "sidebar main decor"
-    "footer footer footer"
-    /15% 70% 15%;
+    "header header"
+    "sidebar main"
+    "footer footer"
+    /15% 85%;
   padding-top: 2%;
   padding-bottom: 2%;
   justify-content: center;
+  margin-right: 6%;
+  margin-left: 6%;
   background-color: var(--primary-bright);
 }
 
@@ -51,12 +53,17 @@ main {
 
 header {
   text-align: center;
-  padding: 1%;
   overflow: hidden;
   background-color: var(--primary-bright);
   border-bottom: var(--accent-dark);
   border-bottom-style: double;
   border-bottom-width: 3px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 40px;
+  max-height: 70px;
 }
 
 header h1 {
@@ -74,11 +81,27 @@ footer {
 
 aside {
   padding: 2%;
+  margin: 0px;
+}
+
+h1, h2, h3 {
+  margin: 0%;
+  font-family: "Geist Pixel", sans-serif;
 }
 
 h1 {
-  font-family: "Geist Pixel", sans-serif;
-  font-size: x-large;
+  color: var(--accent-dark);
+  font-size: 26px;
+}
+
+h2 {
+  color: var(--accent-dark);
+  font-size: 24px;
+}
+
+h3 {
+  color: var(--primary-dark);
+  font-size: 22px;
 }
 
 main h1 {
@@ -97,7 +120,7 @@ a:hover {
 }
 
 nav {
-  padding: 6%;
+  padding: 0%;
   display: grid;
   grid-template-columns: auto;
   gap: 10px;
@@ -111,6 +134,7 @@ button {
   border-style: double;
   border-width: 3px;
   font-family: "Geist Pixel", sans-serif;
+  font-size: medium;
   color: var(--medium);
   height: 50px;
   width: 60%;
@@ -133,12 +157,7 @@ p {
   margin-top: 1%;
   font-family: "Gaegu", sans-serif;
   color: var(--primary-dark);
-}
-
-h1 {
-  margin: 0%;
-  font-size: medium;
-  color: var(--accent-dark);
+  font-size: 20px;
 }
 
 /* make it so when the user highlights something it's a different color than default */
@@ -150,4 +169,42 @@ h1 {
 ::-moz-selection {
   background: var(--accent-bright);
   color: var(--accent-dark);
+}
+
+.angel {
+  transform: rotate(10deg);
+  max-height: 70px;
+  width: auto;
+}
+
+.quartz {
+  transform: rotate(-10deg);
+  max-height: 40px;
+  width: auto;
+}
+
+.matryoshka {
+  transform: rotate(-10deg);
+  max-height: 70px;
+  width: auto;
+}
+
+.golem {
+  transform: rotate(20deg);
+  max-height: 70px;
+  width: auto;
+}
+
+header img:hover{
+  filter: saturate(200%);
+  transition: 1s;
+} 
+
+header .black_rose{
+  transform: rotate(10deg);
+}
+
+header img {
+  max-height: 100px;
+  margin: 0;
 }
