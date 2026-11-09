@@ -1,11 +1,41 @@
 <nav>
-        <button>home</button>
-        <div class="dropdown">
-          <button>work</button>
-          <a href="" class="dropdown-item">data</a>
-          <a href="" class="dropdown-item">design</a>
-        </div>
-        <div class="fun">
-          <button>fun</button>
-        </div>
-    </nav>
+  <div class="desktop-menu">
+    <button>home</button>
+    <div class="dropdown">
+      <button>work</button>
+      <a href="" class="dropdown-item">data</a>
+      <a href="" class="dropdown-item">design</a>
+    </div>
+    <div class="fun">
+      <button>fun</button>
+    </div>
+  </div>
+
+  <script>
+    function showMenu() {
+      var x = document.getElementById("mobile-menu-items");
+      var arrow = document.getElementById("arrow")
+
+      if (x.style.display === "none") {
+        x.style.display = "block";
+        arrow.style.display = "none";
+      } else {
+        x.style.display = "none";
+        arrow.style.display = "inline";
+      }
+    }
+  </script>
+
+  <div class="mobile-menu" onClick="showMenu()">
+    <h3 class="reveal-menu">menu <span id="arrow"> > </span> </h3>
+    <ul id="mobile-menu-items">
+      <li><a href="">home</a></li>
+      <li>work</li>
+      <ul>
+        <li><a href="">data</a></li>
+        <li><a href="">design</a></li>
+      </ul>
+      <li>fun</li>
+    </ul>
+  </div>
+</nav>
