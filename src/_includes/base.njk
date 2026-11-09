@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>{{ title }}</title>
+    <meta content="text/html;charset=utf-8" http-equiv="Content-Type" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="{{ nesting }}css/main.css">
+  </head>
+  <body class="{{ bodyClass }}">
+    {%include 'layout/header.njk'%}
+    <div class="container">
+    <aside>
+        {%include 'layout/nav.njk' %}
+	</aside>
+    <main>
+        {{ content | safe }}
+    </main>
+    </div>
+    <footer>       
+        <h1>My Footer</h1>
+    </footer>
+  </body>
+</html>

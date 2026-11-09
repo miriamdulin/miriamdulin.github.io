@@ -81,33 +81,33 @@ function getNestingString() {
 const headerEl =`
 	<header>
     <img src="images/angel.png" class="angel">
-    <img src="images/rose_quartz.png" class="quartz">
     <img src="images/rose.png" class="rose">
 		<h1>< miriam dulin ></h1>
     <img src="images/black_rose.png" class="black_rose">
     <img src="images/matryoshka.png" class="matryoshka">
-    <img src="images/golem.png" class="golem">
 	</header>
 `
 ;
 
-// Insert your footer HTML inside these ``. You can use HTML as usual.
-// Remove all the content inside the `` if you don't have a footer.
-/*const footerEl = `
+const footerEl = `
 	<footer>
         <h1>My Footer</h1>
 	</footer>
 `
-;*/
+;
 
-// Insert your sidebar HTML inside these ``. You can use HTML as usual.
-// Remove all the content inside the `` if you don't have a sidebar.
 const sidebarEl1 = `
 	<aside>
 		<nav>
         <button>home</button>
-        <button>work</button>
-        <button>fun</button>
+        <div class="dropdown">
+          <button>work</button>
+          <a href="" class="dropdown-item">data</a>
+          <a href="" class="dropdown-item">design</a>
+        </div>
+        <div class="fun">
+          <button>fun</button>
+        </div>
     </nav>
 	</aside>
   `;
