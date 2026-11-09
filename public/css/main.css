@@ -173,7 +173,6 @@ a:hover {
   background-color: var(--accent-bright);
   transition: 0.3s;
 }
-
 main h1 {
   border-bottom: dotted var(--medium) 2px;
 }
@@ -238,6 +237,15 @@ header h1 {
   font-weight: thin;
   font-size: 50px;
   color: var(--primary-dark);
+}
+
+header h1 a {
+  color: var(--primary-dark);
+}
+
+header h1 a:hover {
+  color: var(--primary-dark);
+  background-color: var(--primary-bright);
 }
 
 .angel {
