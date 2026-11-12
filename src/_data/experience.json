@@ -1,0 +1,27 @@
+[
+    {
+        "title": "Research Assistant - Boston University, Department of Political Science",
+        "skills": "Microsoft Excel, attention to detail, data validation, dataset creation",
+        "description": "Built an Excel dataset of 1,000+ handwritten records, enabling analysis of union churn trends",
+        "dates": "June 2026 \n- Present"
+    },
+    {
+        "title": "Project Team Developer - Boston University Data Science Association",
+        "skills": "Maplibre GL, data cleaning, GIS, model testing, data visualization",
+        "description": "Cleaned geospatial data from NYC Open Data, assisted with model design process for predicting air quality for hundreds of new construction projects, and designed web map for final project presentation and implemented using Maplibre GL, JavaScript and HTML",
+        "dates": "Oct 2026\n- Present"
+    },
+    {
+        "title": "Academic Tutor - Boston University, Faculty of Computing and Data Sciences",
+        "skills": "Lesson planning, communication",
+        "description": "Prepared study strategies and lessons for students in Data Science coursework on topics such as SQL, Python, linear algebra, machine learning, and probability",
+        "dates": "Sept 2026\n- Present"
+    },
+    {
+        "title": "Website Team - Pinky Toe Paper",
+        "link": "www.pinkytoepaper.com",
+        "skills": " Lesson planning, communication",
+        "description": "Designing and implementing new UI for a cleaner, more formal look, while maintaining existing codebase and CMS through Airtable",
+        "dates": "Sept 2026\n- Present"
+    }
+]

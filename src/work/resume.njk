@@ -1,0 +1,23 @@
+---
+layout: base.njk
+title: Resume
+bodyClass: resume
+nesting: "../"
+---
+
+<h1>Experience</h1>
+<div class="experience">
+    {%for item in experience%}
+    <div class="info">
+        <div class="heading">
+            <h2>{{item.title}}</h2>
+            <h3>{{item.skills}}</h3>
+        </div>
+        {%if item.link%}
+        <a href={{item.link}}>Project Link</a>
+        {%endif%}
+        <p>{{item.description}}</p>
+    </div>
+    <div class="dates">{{item.dates}}</div>
+    {%endfor%}
+</div>

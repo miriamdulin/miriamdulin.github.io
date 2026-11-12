@@ -1,21 +1,21 @@
 <nav>
   <div class="desktop-menu">
-    <button>home</button>
+    <button><a href="{{nesting}}index.html">home</a></button>
     <div class="dropdown">
       <button>work</button>
       <a href="" class="dropdown-item">data</a>
       <a href="" class="dropdown-item">design</a>
+      <a href="{{nesting}}work/resume.html" class="dropdown-item">resume</a>
     </div>
-    <div class="fun">
-      <button>fun</button>
-    </div>
+    <!--div class="fun"-->
+      <!--button>fun</button-->
+    <!--/div-->
   </div>
 
   <script>
     function showMenu() {
       var x = document.getElementById("mobile-menu-items");
       var arrow = document.getElementById("arrow")
-
       if (x.style.display === "none") {
         x.style.display = "block";
         arrow.style.display = "none";
@@ -26,8 +26,8 @@
     }
   </script>
 
-  <div class="mobile-menu" onClick="showMenu()">
-    <h3 class="reveal-menu">menu <span id="arrow"> > </span> </h3>
+  <div class="mobile-menu">
+    <h3 class="reveal-menu" onClick="showMenu()">menu <span id="arrow"> > </span> </h3>
     <ul id="mobile-menu-items">
       <li><a href="">home</a></li>
       <li>work</li>
@@ -35,7 +35,7 @@
         <li><a href="">data</a></li>
         <li><a href="">design</a></li>
       </ul>
-      <li>fun</li>
+      <!--li>fun</li--->
     </ul>
   </div>
 </nav>
