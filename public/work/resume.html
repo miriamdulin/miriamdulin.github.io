@@ -1,30 +1,32 @@
 <!DOCTYPE html>
 <html lang="en">
 
-  <head>
-    <title>Resume</title>
-    <meta content="text/html;charset=utf-8" http-equiv="Content-Type" />
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="../css/main.css">
-  </head>
-  <body class="resume">
-    <header>
+
+<head>
+  <title>Resume</title>
+  <meta content="text/html;charset=utf-8" http-equiv="Content-Type" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="../css/main.css">
+</head>
+
+<body onload="fetchGoogleSheetData()" class="resume">
+  <header>
     <img src="../images/rose.png" class="rose">   
     <img src="../images/angel.png" class="angel">
     <h1><a href="../index.html">~ miriam dulin ~</a></h1>
     <img src="../images/matryoshka.png" class="matryoshka">  
     <img src="../images/black_rose.png" class="black_rose">   
 </header>
-    <div class="container">
+  <div class="container">
     <aside>
-        <nav>
+      <nav>
   <div class="desktop-menu">
     <button><a href="../index.html">home</a></button>
     <div class="dropdown">
       <button>work</button>
-      <a href="" class="dropdown-item">data</a>
-      <a href="" class="dropdown-item">design</a>
+      <!--a href="" class="dropdown-item">data</a--->
+      <!--a href="" class="dropdown-item">design</a--->
       <a href="../work/resume.html" class="dropdown-item">resume</a>
     </div>
     <!--div class="fun"-->
@@ -49,74 +51,83 @@
   <div class="mobile-menu">
     <h3 class="reveal-menu" onClick="showMenu()">menu <span id="arrow"> > </span> </h3>
     <ul id="mobile-menu-items">
-      <li><a href="">home</a></li>
+      <li><a href="../index.html">home</a></li>
       <li>work</li>
       <ul>
-        <li><a href="">data</a></li>
-        <li><a href="">design</a></li>
+        <!--li><a href="">data</a></li-->
+        <!--li><a href="">design</a></li-->
+        <li><a href="../work/resume.html">resume</a></li>
       </ul>
       <!--li>fun</li--->
     </ul>
   </div>
 </nav>
 
-	</aside>
+    </aside>
     <main>
-        
-<h1>Experience</h1>
-<div class="experience">
-    
-    <div class="info">
+      
+ <script>
+    async function fetchGoogleSheetData() {
+      console.log("hello")
+      try {
+        const apiKey = "AIzaSyA0S8JN0-HPKVIF6adOJ4ngfd50C2OJKBY";
+        const spreadsheetId = "1ERuKbxjX9-qqrDjOpDATlkkpYgUoQa4xAChMsPMJDwY"
+        const sheetName = "Sheet1"; // or "Form responses 1", or default name in other language
+        const response = await fetch(`https://sheets.googleapis.com/v4/spreadsheets/${spreadsheetId}/values/${sheetName}?key=${apiKey}`);
+        const data = await response.json();
+        const rows = data.values.slice(1);
+        console.log(rows);
+
+        makeDisplay("experience", rows);
+
+      } catch (error) {
+        console.error("Error fetching Google Sheets data:", error);
+      }
+ };
+
+ function makeDisplay(container, rowData) {
+    HTML = ``
+    for (let i=0; i < rowData.length; i++) {
+        HTML+= `<div class="experience">`;
+        HTML+= `<div class="info">`;
+        HTML += `<div class="heading">`
+        HTML +=  `<h2>${rowData[i][0]}</h2>`;
+        HTML += `<h3>${rowData[i][2]}</h3>`;
+        HTML += `</div>`
+        if (rowData[i][1] != "" ) {
+            HTML += `<a href=${rowData[i][1]}}>Project Link</a>`
+        }
+        HTML+= `<p>${rowData[i][3]}</p>`;
+        HTML += `</div>`;
+        HTML += `<div class="dates">`;
+        HTML += `${rowData[i][4]}`;
+        HTML += `</div>`;
+        HTML += `</div>`;
+    }
+
+    document.getElementById("experience-container").innerHTML = HTML;
+ };
+</script>
+
+<h1> Experience</h1>
+<div id="experience-container">
+ 
+    <!--div class="info">
         <div class="heading">
-            <h2>Research Assistant - Boston University, Department of Political Science</h2>
-            <h3>Microsoft Excel, attention to detail, data validation, dataset creation</h3>
+            <h2></h2>
+            <h3></h3>
         </div>
         
-        <p>Built an Excel dataset of 1,000+ handwritten records, enabling analysis of union churn trends</p>
+        <p></p>
     </div>
-    <div class="dates">June 2026 
-- Present</div>
-    
-    <div class="info">
-        <div class="heading">
-            <h2>Project Team Developer - Boston University Data Science Association</h2>
-            <h3>Maplibre GL, data cleaning, GIS, model testing, data visualization</h3>
-        </div>
-        
-        <p>Cleaned geospatial data from NYC Open Data, assisted with model design process for predicting air quality for hundreds of new construction projects, and designed web map for final project presentation and implemented using Maplibre GL, JavaScript and HTML</p>
-    </div>
-    <div class="dates">Oct 2026
-- Present</div>
-    
-    <div class="info">
-        <div class="heading">
-            <h2>Academic Tutor - Boston University, Faculty of Computing and Data Sciences</h2>
-            <h3>Lesson planning, communication</h3>
-        </div>
-        
-        <p>Prepared study strategies and lessons for students in Data Science coursework on topics such as SQL, Python, linear algebra, machine learning, and probability</p>
-    </div>
-    <div class="dates">Sept 2026
-- Present</div>
-    
-    <div class="info">
-        <div class="heading">
-            <h2>Website Team - Pinky Toe Paper</h2>
-            <h3> Lesson planning, communication</h3>
-        </div>
-        
-        <a href=www.pinkytoepaper.com>Project Link</a>
-        
-        <p>Designing and implementing new UI for a cleaner, more formal look, while maintaining existing codebase and CMS through Airtable</p>
-    </div>
-    <div class="dates">Sept 2026
-- Present</div>
+    <div class="dates"></div-->
     
 </div>
     </main>
-    </div>
-    <footer>
-    all code written by me, without the use of AI. 
+  </div>
+  <footer>
+   &#169; 2026 Miriam Dulin | <a href="www.linkedin.com/in/miriam-dulin-14320b370">LinkedIn</a> | <a href="https://github.com/miriamdulin">GitHub</a>
 </footer>
-  </body>
+</body>
+
 </html>

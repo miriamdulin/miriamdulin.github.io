@@ -1,23 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
 {#TODO: Add table of contents to every page with in-page links?#}
-  <head>
-    <title>{{ title }}</title>
-    <meta content="text/html;charset=utf-8" http-equiv="Content-Type" />
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="{{ nesting }}css/main.css">
-  </head>
-  <body class="{{ bodyClass }}">
-    {%include 'layout/header.njk'%}
-    <div class="container">
+
+<head>
+  <title>{{ title }}</title>
+  <meta content="text/html;charset=utf-8" http-equiv="Content-Type" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="{{ nesting }}css/main.css">
+</head>
+
+<body {%if bodyClass == "resume"%}onload="fetchGoogleSheetData()"{%endif%} class="{{ bodyClass }}">
+  {%include 'layout/header.njk'%}
+  <div class="container">
     <aside>
-        {%include 'layout/nav.njk' %}
-	</aside>
+      {%include 'layout/nav.njk' %}
+    </aside>
     <main>
-        {{ content | safe }}
+      {{ content | safe }}
     </main>
-    </div>
-    {%include 'layout/footer.njk'%}
-  </body>
+  </div>
+  {%include 'layout/footer.njk'%}
+</body>
+
 </html>
