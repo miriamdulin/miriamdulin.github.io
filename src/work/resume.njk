@@ -5,13 +5,13 @@ bodyClass: resume
 nesting: "../"
 ---
 
- <script>
+ <!--script>
     async function fetchGoogleSheetData() {
       console.log("hello")
       try {
-        const apiKey = "AIzaSyA0S8JN0-HPKVIF6adOJ4ngfd50C2OJKBY";
-        const spreadsheetId = "1ERuKbxjX9-qqrDjOpDATlkkpYgUoQa4xAChMsPMJDwY"
-        const sheetName = "Sheet1"; // or "Form responses 1", or default name in other language
+        const apiKey = "";
+        const spreadsheetId = ""
+        const sheetName = "Sheet1"; 
         const response = await fetch(`https://sheets.googleapis.com/v4/spreadsheets/${spreadsheetId}/values/${sheetName}?key=${apiKey}`);
         const data = await response.json();
         const rows = data.values.slice(1);
@@ -46,12 +46,12 @@ nesting: "../"
 
     document.getElementById("experience-container").innerHTML = HTML;
  };
-</script>
+</script-->
 
-<h1> Experience</h1>
-<div id="experience-container">
- {#%for item in experience%#}
-    <!--div class="info">
+<h1>Experience</h1>
+<div class="experience">
+    {%for item in experience%}
+    <div class="info">
         <div class="heading">
             <h2>{{item.title}}</h2>
             <h3>{{item.skills}}</h3>
@@ -61,6 +61,6 @@ nesting: "../"
         {%endif%}
         <p>{{item.description}}</p>
     </div>
-    <div class="dates">{{item.dates}}</div-->
-    {#%endfor%#}
+    <div class="dates">{{item.dates}}</div>
+    {%endfor%}
 </div>
