@@ -11,8 +11,9 @@ module.exports = function (eleventyConfig) {
     htmlTemplateEngine: "njk",
     dir: {
       input: "src",
-      output: "public",
-      pathPrefix: "/miriamdulin.github.io/"
+      output: "docs",
     },
+    pathPrefix: "/miriamdulin.github.io/"
+
   };
 };
