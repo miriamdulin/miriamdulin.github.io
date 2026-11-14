@@ -1,6 +1,6 @@
-const { EleventyHtmlBasePlugin } = require("@11ty/eleventy");
+import { EleventyHtmlBasePlugin } from "@11ty/eleventy";
 
-module.exports = function (eleventyConfig) {
+export default function (eleventyConfig) {
 
   // This will stop the default behaviour of foo.html being turned into foo/index.html
   eleventyConfig.addGlobalData("permalink", "{{ page.filePathStem }}.html");
@@ -14,6 +14,5 @@ module.exports = function (eleventyConfig) {
       output: "docs",
     },
     pathPrefix: "/miriamdulin.github.io/"
-
   };
 };
